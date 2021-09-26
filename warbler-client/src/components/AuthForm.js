@@ -12,7 +12,7 @@ class AuthForm extends Component {
   }
 
   handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault(); // so page doesn't refresh
     const authType = this.props.signUp ? "signup" : "signin";
     this.props.onAuth(authType, this.state).then(() => {
       console.log("LOGGED IN!");
@@ -78,6 +78,7 @@ class AuthForm extends Component {
                   />
                 </div>
               )}
+              // button here 
               <button
                 type="submit"
                 className="btn btn-primary btn-block btn-lg"

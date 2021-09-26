@@ -3,9 +3,11 @@ import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import Homepage from "../components/Homepage";
 import AuthForm from "../components/AuthForm";
+// import authUser
 import { authUser } from "../store/actions/auth";
 
 const Main = props => {
+  // make sure destructure authUser from props
   const { authUser } = props;
   return (
     <div className="container">
@@ -31,6 +33,7 @@ const Main = props => {
           render={props => {
             return (
               <AuthForm
+              // onAuth as authUser
                 onAuth={authUser}
                 signUp
                 buttonText="Sign me up!"
